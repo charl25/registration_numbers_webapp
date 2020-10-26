@@ -32,6 +32,7 @@ module.exports = function () {
     }
 
     async function sort(code) {
+       // console.log(code)
         const theId = await pool.query(`select id from towns where code = $1`, [code])
         const id = theId.rows[0].id
         if (code === "all") {
