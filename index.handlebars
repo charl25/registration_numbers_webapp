@@ -1,0 +1,59 @@
+<div>
+
+    <h3>registration that start with CA, CJ or CY and contains between 3 to 6 digits after a space</h3>
+    <h4>e.g CA 1236, CJ 856479, CY 25698</h4>
+
+    <form action="/reg_numbers" method="post">
+        <div class="center">
+            <div class="container">
+                <h5>Enter Reg Number</h5>
+                <input name="plate" id="" cols="30" rows="1" class="plate" value="">
+            </div>
+        </div>
+        <div class="center">
+            <button class="addBtn" type="submit"> Add </button><br>
+        </div>
+    </form>
+
+    <form action="/reg_number" method="post">
+        <div class="center">
+            <label class="">
+                <input type="radio" name="town" class="townRadio" value="all">
+                <span class="label-body">Show All</span>
+            </label>
+            <label class="">
+                <input type="radio" name="town" class="townRadio" value="CA">
+                <span class="label-body">Cape Town</span>
+            </label>
+            <label class="">
+                <input type="radio" name="town" class="townRadio" value="CY">
+                <span class="label-body">Belville</span>
+            </label>
+            <label class="">
+                <input type="radio" name="town" class="townRadio" value="CJ">
+                <span class="label-body">Paarl</span>
+            </label>
+        </div>
+        <div class="center">
+            <br>
+            <button class="filterBtn" type="submit">filter</button>
+        </div>
+        <div class="error">
+            {{messages.error}}
+        </div>
+    </form>
+    <div>
+        <form action="/clear" method="get">
+
+            <button>clear</button>
+        </form>
+    </div>
+
+    <div>
+        <ul>
+            {{#each plateNum}}
+            <li class="display">{{this.reg_numb}}</li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
