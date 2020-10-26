@@ -40,7 +40,7 @@ module.exports = function () {
             return filtering.rows
         } else {
             const place = await pool.query(`select * from reg where town_id = $1`, [id])
-            return place.rows[0].reg_numb
+            return place.rows
         }
 
     }

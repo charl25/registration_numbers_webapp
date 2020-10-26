@@ -54,9 +54,9 @@ app.post('/reg_numbers', async function (req, res) {
 
 })
 
-app.get('/reg_number', async function (req, res) {
-    let area = req.params.town
-    console.log(req.params)
+app.post('/reg_number', async function (req, res) {
+    let area = req.body.town
+    console.log(area)
     const sorted= await regFun.sort(area)
     res.render('index', {
         plateNum: sorted

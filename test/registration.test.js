@@ -14,11 +14,11 @@ describe("the registration function", function(){
     const INSERT_QUERY = "insert into reg (reg_numb) values ($1)";
 
     beforeEach(async function () {
-		await pool.query("delete from reg");
-	   	await pool.query("delete from towns");
-        	await pool.query(`insert into towns (town, code) values ($1, $2)`, ["cape town", "CA"])
-        	await pool.query(`insert into towns (town, code) values ($1, $2)`, ["paarl", "CJ"])
-        	await pool.query(`insert into towns (town, code) values ($1, $2)`, ["belville", "CY"])
+        await pool.query("delete from reg");
+        await pool.query("delete from towns");
+        await pool.query(`insert into towns (town, code) values ($1, $2)`, ["cape town", "CA"])
+        await pool.query(`insert into towns (town, code) values ($1, $2)`, ["paarl", "CJ"])
+        await pool.query(`insert into towns (town, code) values ($1, $2)`, ["belville", "CY"])
     });
     
     it("should be able to add a plate", async function () {
@@ -52,7 +52,7 @@ describe("the registration function", function(){
 
 		const results = await regFun.sort('CJ')
 
-		await assert.deepEqual('CJ 321654', results)
+		await assert.equal('CJ 321654', results)
 	})
 
 	it('should be able to clear the database', async function(){
