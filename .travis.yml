@@ -1,7 +1,7 @@
 language: node_js
 
 env:
-  - DATABASE_URL=postgresql://coder:pg123@localhost:5432/reglist
+  - DATABASE_URL=postgresql://postgres@localhost:5432/reglist
 
 node_js:
   - "12.18.3"
