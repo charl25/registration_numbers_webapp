@@ -1,0 +1,44 @@
+.container{
+    display: flex;
+    text-align: center;
+    margin: 10px;
+}
+
+@media(min-width: 800px){
+    .Histo{
+        display: flex;
+    }
+}
+body{
+    
+    background-color: silver;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    
+}
+.display{
+text-align: center;
+}
+li{
+    display: block;
+    list-style: none;
+	background-color: silver;
+	border: 0.1em solid;
+	border-radius: 0.25em;
+	padding: 1em;
+	margin: 0.5em;
+	width: 7em;
+	text-align: center;
+	font-weight: bold;
+    /* float: left; */
+
+}
+
+.error{
+    color: red;
+    text-align: center;
+}
