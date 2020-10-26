@@ -7,8 +7,8 @@ node_js:
   - "12.18.3"
 
 before_script:
-  - psql -c 'create database  reglist_tests;' -U postgres
-  - psql -U postgres -d reglist_tests -a -f reglist.sql
+  - psql -c 'create database  reglist;' -U postgres
+  - psql -U postgres -d reglist -a -f reglist.sql
 
 services:
   - postgresql
