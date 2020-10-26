@@ -26,19 +26,20 @@ module.exports = function () {
         }
     }
 
-    async function getPlates(){
+    async function getPlates() {
         const plates = await pool.query('select reg_numb from reg')
         return plates.rows
     }
 
     async function sort(code) {
-       // console.log(code)
-        const theId = await pool.query(`select id from towns where code = $1`, [code])
-        const id = theId.rows[0].id
-        if (code === "all") {
+        // console.log(code)
+        if (code == "all") {
             const filtering = await pool.query(`select reg_numb from reg`)
             return filtering.rows
         } else {
+            const theId = await pool.query(`select id from towns where code = $1`, [code])
+            const id = theId.rows[0].id
+
             const place = await pool.query(`select * from reg where town_id = $1`, [id])
             return place.rows
         }
