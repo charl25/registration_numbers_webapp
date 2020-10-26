@@ -8,7 +8,7 @@ node_js:
 
 before_script:
   - psql -c 'create database  reglist_tests;' -U postgres
-  - psql -U postgres -d reglist_tests -a -f users.sql
+  - psql -U postgres -d reglist_tests -a -f reglist.sql
 
 services:
   - postgresql
