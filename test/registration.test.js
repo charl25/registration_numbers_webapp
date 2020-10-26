@@ -15,6 +15,10 @@ describe("the registration function", function(){
 
     beforeEach(async function () {
 		await pool.query("delete from reg");
+	   	await pool.query("delete from towns");
+        	await pool.query(`insert into towns (town, code) values ($1, $2)`, ["cape town", "CA"])
+        	await pool.query(`insert into towns (town, code) values ($1, $2)`, ["paarl", "CJ"])
+        	await pool.query(`insert into towns (town, code) values ($1, $2)`, ["belville", "CY"])
     });
     
     it("should be able to add a plate", async function () {
