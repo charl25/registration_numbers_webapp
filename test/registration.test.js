@@ -51,8 +51,9 @@ describe("the registration function", function(){
 		
 
 		const results = await regFun.sort('CJ')
+		const result = results[0].reg_numb
 
-		await assert.equal('CJ 321654', results)
+		await assert.equal('CJ 321654', result)
 	})
 
 	it('should be able to clear the database', async function(){
